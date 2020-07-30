@@ -25,7 +25,7 @@ PCB is intended towards the following (under identical conditions) :
 
 At the moment, PCB is has been rewritten in Python (Originally written in C)
 to measure differences in performance between the languages, the results of
-which are attached in the 'PerCompare.png' image. 
+which are attached in the 'Screenshot...' image. 
 
 And other uses as and when they arise.
 
