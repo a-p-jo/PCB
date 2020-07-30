@@ -23,6 +23,10 @@ PCB is intended towards the following (under identical conditions) :
 2) Measuring of gains through overclocking/boosting CPU
 3) Specifically measuring integer division capcity of CPU
 
+At the moment, PCB is has been rewritten in Python (Originally written in C)
+to measure differences in performance between the languages, the results of
+which are attached in the 'PerCompare.png' image. 
+
 And other uses as and when they arise.
 
 Any contribution/critique is welcome.
