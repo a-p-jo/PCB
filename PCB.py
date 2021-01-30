@@ -1,41 +1,36 @@
-def bench(x):
-    x = int(x)
+import time
+import sys
+MULTIPLIER = 10000000
+
+def bench(load):
+    load = int(load)
     count = 0
-    if(x>=2):
+    if(load >= 2):
         count+=1
-    for i in range(3,x+1,2):
+    for i in range(3,load+1,2):
         count+=1
         q = 3
-        while q*q <= i:
-            if i%q == 0:
-                count-=1
+        while q * q <= i:
+            if i % q == 0:
+                count -= 1
                 break
             q += 2
     return count
 
-print("PCB v0.1\nSingle-Threaded Open-source Tool for Benchmarking System Speed.\nRecommended Load Value 1 - 3")
-import time
-while True:
-    x = float(input("Enter Load Value: "))
-    x = x * 10000000
-    y = int(input("Enter Repeat Count: "))
-    input("Press Enter to Run")
+if len(sys.argv) >= 3:
+    load = float(sys.argv[1])
+    load *= MULTIPLIER
+    iterations = int(sys.argv[2])
+
     print("(...Running...)")
     total = 0
 
-    for z in range(0,y):
+    for z in range(0,iterations):
         start = time.process_time()
-        count = bench(x)
+        count = bench(load)
         t = time.process_time() - start
-        total += t
-        
+        total += t       
 
-    print(count," Primes processed.\n\nAverage time taken = ","{:.4f}".format(total/y))
-    loop = input(" Re-Run ? (Y/N) : ")
-    if loop == 'n' or loop == 'N':
-        input("Press Enter to Exit")
-        break
-
-
-    
-        
+    print(count,"Primes", iterations, "Iterations\nIteration Time =","{:.4f}s,".format(total/iterations),"Total Time =","{:.4f}s".format(total))
+else :
+    print("Too Few Arguments.")
