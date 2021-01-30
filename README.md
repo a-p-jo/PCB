@@ -1,13 +1,10 @@
 # PCB
 Small Python v C Benchmark
 
-PCB takes a 'Load Value'(L.V.) and a 'Repeat Count' as input.
-PCB processes all natural numbers from 2 to (L.V. * 10^7) , measures how 
-long it takes, and repeats this for the number of times specified in
-'Repeat Count'.
+PCB takes a 'Load Value' and a 'Repeat Count' as command-line arguments.
+For example, `./PCB 1.5 5` or `./PCB.py 1.5 5` here, for 5 timed iterations, prime numbers are searched between 2 and (1.5 * 10^7) using modulo division.
 
-The number of primes found and the average time taken over the runs is
-then outputted. 
+The number of primes found, total number of iterations, the avg iteration time as well as total time is output.
 
 PCB does not purport to be an accurate benchmark for purpose of 
 comparing performance across systems/processors.It tests only for
